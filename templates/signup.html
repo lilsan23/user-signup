@@ -3,18 +3,18 @@
 {% block content %}
 
 <h1>Signup</h1>
-<form action="/" method=['post']> 
+<form method='post' action="/"> 
     <label> Username</label>
-        <input type="text" name="username" /><br>
-        {% if error %}
-            <p class='username'>{{ userid_error }}</p>
-        {% endif %}
+        <input type="text" name="username" value='{{username}}' />
+           <p class="error">{{ userid_error }}</p>
     <br><label>Password</label>
-        <input type="text" name="password" /></form> 
+        <input type="text" name="password" value='{{password}}' />
+            <p class="error">{{ password_error }}</p>
     <br><label>Verify Password</label>
-        <input type="text" name="verify_password" /><br> 
-    <br><label>Email (optional)</label>
-        <input type="text" name="email" /> 
+        <input type="text" name="verify_password" value='{{verify_password}}'/>
+            <p class="error">{{ver_password_error}}</p>
+    <!-- <br><label>Email (optional)</label>
+        <input type="text" name="email" />  -->
     <input type="submit" name="Submit" />
 </form>
 
