@@ -26,15 +26,14 @@ def hello():
         email2_error = "Email must be between 3 and 20 characters."
         email="" 
     
-    if not userid_error or not email_error or not email2_error:
-        return render_template('hello.html', username=user_id)
-      
-    else:
         return render_template('signup.html', userid_error=userid_error, 
             email_error=email_error, 
             email2_error=email2_error,
             user_id=user_id,
             email=email)
+      
+    else:
+        return render_template('hello.html', username=user_id)
 
    
     
