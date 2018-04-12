@@ -53,17 +53,4 @@ def hello():
             email=email)
       
 
-        
-
-   
-    
-
-    # else:
-    # return render_template('signup.html', userid_error=userid_error, password_error= password_error, 
-    #     # ver_password_error=ver_password_error, 
-    #     # verify_password=ver_password,
-    #     username=user_id, 
-    #     password=pass_word)
-    
- 
 app.run()
