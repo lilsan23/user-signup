@@ -16,6 +16,12 @@ def hello():
     ver_password = request.form['verify_password']
     email = request.form['email']
 
+    userid_error = ""
+    password_error = ""
+    ver_password_error = ""
+    email_error = ""
+    email2_error = ""
+
     if len(user_id)<3 or user_id =="" or (" " in user_id):
         userid_error = "Username does not meet requirements. Try again."
 
@@ -27,14 +33,12 @@ def hello():
         ver_password_error = "Password does not match."
         ver_password="" 
             
-    if (not '@' in email) or (not '.' in email):
+    if email !="":
+        (not '@' in email) or (not '.' in email) and len(email) <3 and len(email) >20 
         email_error = "Email should contain '@' and '.'."
-        email=""
-            
-    if len(email) <3 and email!="" or len(email) >20 and email!="":
-        email2_error = "Email must be between 3 and 20 characters."
-        
-    if not userid_error or password_error or email_error or email2_error:
+               # email2_error = "Email must be between 3 and 20 characters."
+  
+    if not userid_error and not password_error and not email_error and not email2_error:
         return render_template('hello.html', username=user_id)
 
     else:
@@ -42,7 +46,7 @@ def hello():
             password_error=password_error, 
             ver_password_error=ver_password_error,
             email_error=email_error, 
-            email2_error=email2_error,
+           # email2_error=email2_error,
             user_id=user_id,
             password=pass_word,
             verify_password=ver_password,
