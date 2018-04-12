@@ -16,7 +16,7 @@ def hello():
 
     if len(user_id)<3 or user_id =="" or (" " in user_id):
         userid_error = "Username does not meet requirements. Try again."
-        user_id=""
+
             
     if (not '@' in email) or (not '.' in email):
         email_error = "Email should contain '@' and '.'."
@@ -24,7 +24,7 @@ def hello():
             
     if len(email) <3 or len(email) >20:
         email2_error = "Email must be between 3 and 20 characters."
-        email="" 
+        
     
         return render_template('signup.html', userid_error=userid_error, 
             email_error=email_error, 
