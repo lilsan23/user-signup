@@ -33,7 +33,7 @@ def hello():
         ver_password_error = "Password does not match."
         ver_password="" 
             
-    if (not '@' in email) or (not '.' in email):
+    if (not '@' in email) and email!="" or (not '.' in email) and email!="":
         email_error = "Email should contain '@' and '.'."
     
     if len(email) <3 and email!="" or len(email) >20 and email!="":
