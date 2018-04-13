@@ -34,7 +34,7 @@ def hello():
         ver_password="" 
             
     if email !="":
-        (not '@' in email) or (not '.' in email) and len(email) <3 and len(email) >20 
+        not ('@' in email or '.' in email or len(email) >3 or len(email) <20)
         email_error = "Email should contain '@' and '.'."
                # email2_error = "Email must be between 3 and 20 characters."
   
