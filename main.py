@@ -29,16 +29,17 @@ def hello():
         password_error = "Password does not meet requirements. Try again."
         pass_word=""
     
-    if not ver_password == pass_word: 
+    if ver_password != pass_word: 
         ver_password_error = "Password does not match."
         ver_password="" 
             
-    if email !="":
-        (not '@' in email) or (not '.' in email) and len(email) <3 and len(email) >20 
+    if (not '@' in email) or (not '.' in email):
         email_error = "Email should contain '@' and '.'."
-               # email2_error = "Email must be between 3 and 20 characters."
+    
+    if len(email) <3 and email!="" or len(email) >20 and email!="":
+        email2_error = "Email must be between 3 and 20 characters."
   
-    if not userid_error and not password_error and not email_error and not email2_error:
+    if not userid_error and not password_error and not ver_password_error and not email_error and not email2_error:
         return render_template('hello.html', username=user_id)
 
     else:
@@ -46,7 +47,7 @@ def hello():
             password_error=password_error, 
             ver_password_error=ver_password_error,
             email_error=email_error, 
-           # email2_error=email2_error,
+            email2_error=email2_error,
             user_id=user_id,
             password=pass_word,
             verify_password=ver_password,
